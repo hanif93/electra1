@@ -1,0 +1,25 @@
+<ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-calm">
+        <center><h1 class="title">Electrical Equipment Control Panel (EECP)</h1></center>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <form ng-submit="root.login(root.userdata)">
+            <div class="list">
+                <center><p>Welcome To BK 3</p></center>
+                <img src="/static/img/fac.png" width="100%">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Username</span>
+                    <input type="text" placeholder="Username" ng-model="root.userdata.username">
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="Password" ng-model="root.userdata.password">
+                </label>
+            </div>
+
+            <div class="padding">
+                <button class="button button-block button-dark" >Login</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

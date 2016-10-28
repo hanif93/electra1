@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/angular-resource/angular-resource.min.js"></script>
+    <script src="cordova.js"></script>
+
+    <script>
+    //connection on ARDUINO and IP address
+        var ELECTRA = {
+            BASE: 'http://192.168.8.100',
+            ARDN: "http://192.168.43.107:80",
+        }
+    </script>
+
+    <script src="app/_config/electra.modules.js"></script>
+    <script src="app/_config/electra.js"></script>
+
+    <script src="app/Device/device.js"></script>
+    <script src="app/Device/device.factory.js"></script>
+
+    <script src="app/Map/map.js"></script>
+
+
+</head>
+<body ng-app="Electra" ng-controller="rootCtrl as root">
+
+    <ion-nav-bar class="bar-dark">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-tabs class="tabs-icon-top tabs-background-dark tabs-color-light">
+      <!-- Controller Tab -->
+        <ion-tab title="Device Controller" icon-off="ion-ios-lightbulb-outline" icon-on="ion-ios-lightbulb" ui-sref="device">
+            <ion-nav-view name="device"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Device Map" icon-off="ion-ios-information-outline" icon-on="ion-ios-information" ui-sref="map">
+            <ion-nav-view name="map"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Logout" icon-off="ion-log-out" icon-on="ion-log-out" ng-click="root.logout()"></ion-tab>
+    </ion-tabs>
+
+
+</body>
+</html>
